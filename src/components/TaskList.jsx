@@ -1,6 +1,27 @@
-import React from "react";
+import { useState } from "react";
 
 const TaskList = ({ tasks, setTasks }) => {
+  //   const [checkTask, setCheckTask] = useState({
+  //     id: "",
+  //     isChecked: false,
+  //   });
+  //   // find the task by its id then change its isCompleted status to true
+  //   if (checkTask.isChecked) {
+  //     const checkedTask = tasks.find((task) => task.id.includes(checkTask.id));
+  //     console.log(checkedTask);
+
+  //     const updatedCheckedTask = {
+  //       ...checkedTask,
+  //       isCompleted: true,
+  //     };
+
+  //     // we need to find the task with that id and replace it with the updatedCheckedTask
+  //     const updateTasksWithUpdatedInfo = tasks.map((task) =>
+  //       task.id === updatedCheckedTask.id ? updatedCheckedTask : task,
+  //     );
+  //     setTasks(updateTasksWithUpdatedInfo);
+  //   }
+
   return (
     <div>
       {tasks.length !== 0 ? (
@@ -8,7 +29,24 @@ const TaskList = ({ tasks, setTasks }) => {
           {tasks.map((t) => (
             <li key={t.id}>
               <h3>{t.name}</h3>
-              {t.isCompleted ? "✅" : "Not Completed"}
+              {t.isCompleted ? (
+                "✅"
+              ) : (
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  id="checkbox"
+                  onChange={() =>
+                    setTasks(
+                      tasks.map((task) =>
+                        task.id === t.id
+                          ? { ...task, isCompleted: true }
+                          : task,
+                      ),
+                    )
+                  }
+                />
+              )}
             </li>
           ))}
         </ul>
