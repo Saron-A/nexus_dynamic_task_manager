@@ -27,35 +27,48 @@ const TaskList = ({ tasks, setTasks }) => {
     setTasks(updatedTasks);
   };
 
+  const handleClearCompleted = () => {
+    const filterCompleted = tasks.filter((task) => !task.isCompleted);
+    setTasks(filterCompleted);
+  };
+
   return (
     <div>
+      <h1>Tasks Assigned</h1>
       {tasks.length !== 0 ? (
-        <ul>
-          {tasks.map((t) => (
-            <li key={t.id}>
-              <h3>{t.name}</h3>
-              {t.isCompleted ? (
-                "✅"
-              ) : (
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  id="checkbox"
-                  onChange={() =>
-                    setTasks(
-                      tasks.map((task) =>
-                        task.id === t.id
-                          ? { ...task, isCompleted: true }
-                          : task,
-                      ),
-                    )
-                  }
-                />
-              )}
-              <button onClick={() => handleDelete(t)}>Delete</button>
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul>
+            {tasks.map((t) => (
+              <li key={t.id}>
+                <h3>{t.name}</h3>
+                {t.isCompleted ? (
+                  "✅"
+                ) : (
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    id="checkbox"
+                    onChange={() =>
+                      setTasks(
+                        tasks.map((task) =>
+                          task.id === t.id
+                            ? { ...task, isCompleted: true }
+                            : task,
+                        ),
+                      )
+                    }
+                  />
+                )}
+                <button onClick={() => handleDelete(t)}>Delete</button>
+              </li>
+            ))}
+          </ul>
+          {tasks.some((task) => task.isCompleted) && (
+            <button onClick={handleClearCompleted}>
+              Clear Completed Tasks
+            </button>
+          )}
+        </>
       ) : (
         <p>No Tasks yet.</p>
       )}

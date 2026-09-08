@@ -25,9 +25,9 @@ const TaskFilter = ({ tasks }) => {
                 .map((cTask) => (
                   <li key={cTask.id}>
                     <h3>{cTask.name}</h3>
-                    <p>✅</p>
+                    {/* <p>✅</p> */}
                   </li>
-                ))}
+                ))}{" "}
             </ul>
           </div>
 

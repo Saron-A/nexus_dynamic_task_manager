@@ -27,7 +27,7 @@ const TaskForm = ({ tasks, setTasks }) => {
   console.log("tasks: ", tasks);
   return (
     <div>
-      <h1>Task Form</h1>
+      <h2>Task Form</h2>
       <form action="" onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
