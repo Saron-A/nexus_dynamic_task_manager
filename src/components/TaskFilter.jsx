@@ -1,6 +1,4 @@
-import React from "react";
-
-const TaskFilter = ({ tasks, setTasks }) => {
+const TaskFilter = ({ tasks }) => {
   return (
     <>
       {tasks.length !== 0 ? (
@@ -40,7 +38,7 @@ const TaskFilter = ({ tasks, setTasks }) => {
               .map((iTask) => (
                 <li key={iTask.id}>
                   <h3>{iTask.name}</h3>
-                  <p>❌</p>
+                  {/* <p>❌</p> */}
                 </li>
               ))}
           </div>
