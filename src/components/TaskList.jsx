@@ -22,6 +22,11 @@ const TaskList = ({ tasks, setTasks }) => {
   //     setTasks(updateTasksWithUpdatedInfo);
   //   }
 
+  const handleDelete = (task) => {
+    const updatedTasks = tasks.filter((t) => t.id !== task.id); // create an array of tasks other than the deleted task
+    setTasks(updatedTasks);
+  };
+
   return (
     <div>
       {tasks.length !== 0 ? (
@@ -47,6 +52,7 @@ const TaskList = ({ tasks, setTasks }) => {
                   }
                 />
               )}
+              <button onClick={() => handleDelete(t)}>Delete</button>
             </li>
           ))}
         </ul>
