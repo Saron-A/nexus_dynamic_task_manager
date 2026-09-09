@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sub-container4 {
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.allTasks,
+.completedTasks2,
+.incompleteTasks {
+  border: 1px solid black;
+  padding: 0.65rem 1.1rem;
+}
+
+.allTasks h2,
+.completedTasks2 h2,
+.incompleteTasks h2 {
+  font-size: x-large;
+  margin-bottom: 1rem;
+}
+
+.allTasks ul,
+.completedTasks2 ul,
+.incompleteTasks ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.allTasks ul li,
+.completedTasks2 ul li,
+.incompleteTasks ul li {
+  display: flex;
+  gap: 1rem;
+}
+
+.allTasks ul li h3,
+.completedTasks2 ul li h3,
+.incompleteTasks ul li h3 {
+  font-weight: normal;
+}

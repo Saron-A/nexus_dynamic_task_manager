@@ -1,6 +1,8 @@
+import "../styles/taskFilter.css";
+
 const TaskFilter = ({ tasks }) => {
   return (
-    <>
+    <div className="sub-container4">
       {tasks.length !== 0 ? (
         <>
           {/* Have different filters - All task, Completed Tasks and Not completed tasks */}
@@ -17,7 +19,7 @@ const TaskFilter = ({ tasks }) => {
             </ul>
           </div>
 
-          <div className="completedTasks">
+          <div className="completedTasks2">
             <h2>Completed Tasks</h2>
             <ul>
               {tasks
@@ -31,7 +33,7 @@ const TaskFilter = ({ tasks }) => {
             </ul>
           </div>
 
-          <div className="inCompleteTasks">
+          <div className="incompleteTasks">
             <h2>Incomplete Tasks</h2>
             {tasks
               .filter((iTask) => !iTask.isCompleted)
@@ -46,7 +48,7 @@ const TaskFilter = ({ tasks }) => {
       ) : (
         ""
       )}
-    </>
+    </div>
   );
 };
 
