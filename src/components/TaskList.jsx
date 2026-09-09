@@ -46,7 +46,6 @@ const TaskList = ({ tasks, setTasks }) => {
                   <input
                     type="checkbox"
                     name="checkbox"
-                    id="checkbox"
                     onChange={() =>
                       setTasks(
                         tasks.map((task) =>
