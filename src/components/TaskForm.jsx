@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/taskForm.css";
 
 const TaskForm = ({ tasks, setTasks }) => {
   const [newTask, setNewTask] = useState({
@@ -26,13 +27,14 @@ const TaskForm = ({ tasks, setTasks }) => {
   };
   console.log("tasks: ", tasks);
   return (
-    <div>
+    <div className="sub-container">
       <h2>Task Form</h2>
       <form action="" onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
           id="newTask"
           name="newTask"
+          placeholder="Add Task"
           value={newTask.name}
           onChange={(e) => setNewTask({ ...newTask, name: e.target.value })}
         />

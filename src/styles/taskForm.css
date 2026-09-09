@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(157, 174, 199);
+  gap: 1rem;
+  padding: 1rem 0.25rem;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.sub-container h2 {
+  align-self: center;
+  font-size: xx-large;
+}
+
+.sub-container form {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0.5rem;
+  gap: 2rem;
+}
+
+.sub-container form input {
+  flex: 1.25;
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.85rem;
+  border: none;
+}
+
+.sub-container form button {
+  flex: 0.35;
+  background-color: green;
+  color: white;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.25 0.5rem;
+}
