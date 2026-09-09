@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sub-container2 {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  background-color: yellow;
+  padding: 1.5rem 0.25rem;
+  width: 100%;
+}
+
+.sub-container2 .allTasks,
+.completedTasks {
+  background-color: black;
+  color: white;
+  height: 100%;
+  width: 40%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sub-container2 .allTasks p,
+.completedTasks p {
+  font-weight: light;
+  font-size: smaller;
+}
+
+.sub-container2 .allTasks h3,
+.completedTasks h3 {
+  font-weight: bold;
+  font-size: 3rem;
+}

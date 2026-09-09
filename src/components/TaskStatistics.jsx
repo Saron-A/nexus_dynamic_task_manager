@@ -1,18 +1,20 @@
+import "../styles/taskStatistics.css";
+
 const TaskStatistics = ({ tasks }) => {
   const totalTaskCount = tasks.length;
   const completedTasks = tasks.filter((task) => task.isCompleted);
 
   return (
-    <>
+    <div className="sub-container2">
       <div className="allTasks">
         <p>Total Tasks Assigned</p>
-        <h2>{totalTaskCount}</h2>
+        <h3>{totalTaskCount}</h3>
       </div>
       <div className="completedTasks">
         <p>Completed Tasks</p>
-        <h2>{completedTasks.length}</h2>
+        <h3>{completedTasks.length}</h3>
       </div>
-    </>
+    </div>
   );
 };
 
