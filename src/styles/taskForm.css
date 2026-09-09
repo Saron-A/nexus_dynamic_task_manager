@@ -7,11 +7,12 @@
 .sub-container {
   display: flex;
   flex-direction: column;
-  background-color: rgb(157, 174, 199);
+  /* background-color: rgb(157, 174, 199); */
   gap: 1rem;
   padding: 1rem 0.25rem;
   width: 100%;
   border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .sub-container h2 {
@@ -30,7 +31,7 @@
   flex: 1.25;
   padding: 0.75rem 0.5rem;
   border-radius: 0.85rem;
-  border: none;
+  border: 0.5px solid black;
 }
 
 .sub-container form button {

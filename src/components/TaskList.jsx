@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import "../styles/taskList.css";
 
 const TaskList = ({ tasks, setTasks }) => {
   //   const [checkTask, setCheckTask] = useState({
@@ -33,14 +33,13 @@ const TaskList = ({ tasks, setTasks }) => {
   };
 
   return (
-    <div>
+    <div className="sub-container3">
       <h1>Tasks Assigned</h1>
       {tasks.length !== 0 ? (
         <>
           <ul>
             {tasks.map((t) => (
               <li key={t.id}>
-                <h3>{t.name}</h3>
                 {t.isCompleted ? (
                   "✅"
                 ) : (
@@ -59,6 +58,8 @@ const TaskList = ({ tasks, setTasks }) => {
                     }
                   />
                 )}
+                <h3>{t.name}</h3>
+
                 <button onClick={() => handleDelete(t)}>Delete</button>
               </li>
             ))}

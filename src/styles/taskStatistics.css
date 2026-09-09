@@ -8,9 +8,10 @@
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
-  background-color: yellow;
+  /* background-color: yellow; */
   padding: 1.5rem 0.25rem;
   width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .sub-container2 .allTasks,

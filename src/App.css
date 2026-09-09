@@ -7,14 +7,18 @@
   font-family: Inter;
 }
 
+body {
+  background-color: rgb(218, 215, 215);
+}
+
 .container {
   display: flex;
   flex-direction: column;
   width: 80vw;
   gap: 1rem;
-  background-color: pink;
-  height: 100vh;
-  max-height: 100%;
+  /* background-color: pink; */
+  height: 100%;
+  min-height: 100vh;
   align-items: center;
   padding: 5rem 1rem;
   justify-self: center;
