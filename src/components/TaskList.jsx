@@ -40,23 +40,25 @@ const TaskList = ({ tasks, setTasks }) => {
           <ul>
             {tasks.map((t) => (
               <li key={t.id}>
-                {t.isCompleted ? (
+                {/* {t.isCompleted ? (
                   "✅"
                 ) : (
-                  <input
-                    type="checkbox"
-                    name="checkbox"
-                    onChange={() =>
-                      setTasks(
-                        tasks.map((task) =>
-                          task.id === t.id
-                            ? { ...task, isCompleted: true }
-                            : task,
-                        ),
-                      )
-                    }
-                  />
-                )}
+                
+                )} */}
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  checked={t.isCompleted}
+                  onChange={() =>
+                    setTasks(
+                      tasks.map((task) =>
+                        task.id === t.id
+                          ? { ...task, isCompleted: !task.isCompleted }
+                          : task,
+                      ),
+                    )
+                  }
+                />
                 <h3>{t.name}</h3>
 
                 <button onClick={() => handleDelete(t)}>Delete</button>

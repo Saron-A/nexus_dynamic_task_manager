@@ -11,41 +11,34 @@ const TaskForm = ({ tasks, setTasks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // we create a new object so that react will know there has been a change (react only detects change when the memory address has change not the contents)
     const newTaskObject = {
       id: crypto.randomUUID(),
       name: newTask.name,
       isCompleted: false,
     };
 
-    setTasks((prevTasks) => [...prevTasks, newTaskObject]);
+    // setNewTask(newTaskObject); // doesn't immediately update react until the next render so we are not updating the tasks list
+    setTasks([...tasks, newTaskObject]);
+    console.log("new task: ", newTask);
 
-    setNewTask({
-      id: "",
-      name: "",
-      isCompleted: false,
-    });
+    // empty the input field
+    setNewTask({ id: "", name: "", isCompleted: false });
   };
-
+  console.log("tasks: ", tasks);
   return (
     <div className="sub-container">
       <h2>Task Form</h2>
-
-      <form onSubmit={handleSubmit}>
+      <form action="" onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
           id="newTask"
           name="newTask"
           placeholder="Add Task"
           value={newTask.name}
-          onChange={(e) =>
-            setNewTask({
-              ...newTask,
-              name: e.target.value,
-            })
-          }
+          onChange={(e) => setNewTask({ ...newTask, name: e.target.value })}
         />
-
-        <button type="submit">Add</button>
+        <button type="submit"> Add </button>
       </form>
     </div>
   );
